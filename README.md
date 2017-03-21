@@ -12,15 +12,19 @@ Tested with the latest commit to the dev branch of agnwinds/python https://githu
 
 * yso_a.pf: YSO model based on Stuart Sim's 2005 model but with some adjustments described below
 * yso_ionization.dat: sample ionization file 
+* yso_a.pf: YSO model based on Stuart Sim's 2005 model but uses a readin temperature profile
+* yso_tprofile.dat: completely fudged temperature profile file. please adjust, but tells you the format.
+* yso_example_na_line.png: example output from running yso_a.pf. You see nice Na I lines! :)
 
 ### About the model
 
 The model here is based on model A from SDL05. However, there are some differences. SDL05 are interested in modelling the hydrogen profiles. To do that, you'd need to use the "macro-atom" line transfer mode, and the "recalc_bb" ionization mode. You could do that by changing these lines in a parameter file
 
 ```
-
-
-
+Atomic_data                                data/h20
+Wind_ionization(0=on.the.spot,1=LTE,2=fixed,3=recalc_bb,6=pairwise_bb,7=pairwise_pow,8=matrix_bb,9=matrix_pow)   3
+Line_transfer(0=pure.abs,1=pure.scat,2=sing.scat,3=escape.prob,6=macro_atoms,7=macro_atoms+aniso.scattering)   7
+```
 
 ### Key parameters 
 
