@@ -5,7 +5,7 @@ Wind_type(0=SV,1=Sphere,3=Hydro,4=corona,5=knigge,6=homologous,7=yso,8=elvis,9=s
 Coord.system(0=spherical,1=cylindrical,2=spherical_polar,3=cyl_var)   1
 Wind.dim.in.x_or_r.direction               30
 Wind.dim.in.z_or_theta.direction           30
-Atomic_data                                data/standard79
+Atomic_data                                data/standard78
 photons_per_cycle                          1000000
 Ionization_cycles                          10
 spectrum_cycles                            50
