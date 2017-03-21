@@ -1,0 +1,69 @@
+System_type(0=star,1=binary,2=agn,3=previous)   0
+disk.type(0=no.disk,1=standard.flat.disk,2=vertically.extended.disk)   1
+Number.of.wind.components                  1
+Wind_type(0=SV,1=Sphere,3=Hydro,4=corona,5=knigge,6=homologous,7=yso,8=elvis,9=shell,10=None)   5
+Coord.system(0=spherical,1=cylindrical,2=spherical_polar,3=cyl_var)   1
+Wind.dim.in.x_or_r.direction               30
+Wind.dim.in.z_or_theta.direction           30
+Atomic_data                                data/standard79
+photons_per_cycle                          1000000
+Ionization_cycles                          10
+spectrum_cycles                            50
+Wind_ionization(0=on.the.spot,1=LTE,2=fixed,3=recalc_bb,6=pairwise_bb,7=pairwise_pow,8=matrix_bb,9=matrix_pow)   2
+Fixed.concentrations.filename   yso_ionization.dat
+Line_transfer(0=pure.abs,1=pure.scat,2=sing.scat,3=escape.prob,6=macro_atoms,7=macro_atoms+aniso.scattering)   5
+Thermal_balance_options(0=everything.on,1=no.adiabatic)   0
+Star_radiation(y=1)                        1
+Disk_radiation(y=1)                        1
+Boundary_layer_radiation(y=1)              0
+Wind_radiation(y=1)                        1
+Rad_type_for_star(0=bb,1=models)_to_make_wind   0
+Rad_type_for_disk(0=bb,1=models)_to_make_wind   0
+mstar(msol)                                10
+rstar(cm)                                  3.82635e+11
+tstar                                      23700.0
+disk.mdot(msol/yr)                         1e-6
+Disk.illumination.treatment(0=no.rerad,1=high.albedo,2=thermalized.rerad,3=extra.heating.from.star)   1
+Disk.temperature.profile(0=standard;1=readin)   0
+disk.radmax(cm)                            3.82635e12
+
+### Parameters for Domain 0 [This defines the wind]
+wind.radmax(cm)                            3e13
+wind.t.init                                10000
+wind.mdot(msol/yr)                         3e-7
+kn.d(in_units_of_rstar)                    0.14
+kn.mdot_r_exponent                         1
+kn.v_infinity(in_units_of_vescape)         1
+kn.acceleration_length(cm)                 3.82635e+11
+kn.acceleration_exponent                   1.5
+kn.v_zero(multiple_of_sound_speed_at_base)   1
+kn.rmin(in_units_of_rstar)                 1
+kn.rmax(in_units_of_rstar)                 10
+filling_factor(1=smooth,<1=clumped)        1
+Rad_type_for_star(0=bb,1=models,2=uniform)_in_final_spectrum   0
+Rad_type_for_disk(0=bb,1=models,2=uniform)_in_final_spectrum   0
+
+### Parameters defining the spectra seen by observers
+
+### The minimum and maximum wavelengths in the final spectra
+spectrum_wavemin                           5500
+spectrum_wavemax                           6500
+
+### The observers and their location relative to the system
+no_observers                               8
+angle(0=pole)                              10
+angle(0=pole)                              20
+angle(0=pole)                              30
+angle(0=pole)                              40
+angle(0=pole)                              50
+angle(0=pole)                              60
+angle(0=pole)                              70
+angle(0=pole)                              85
+
+# always set this to 1, it uses variance reduction for the spectrum and is quicker
+live.or.die(0).or.extract(anything_else)   1
+
+# default is an flambda spectrum
+spec.type(flambda(1),fnu(2),basic(other)   1
+reverb.type                                0
+Photon.sampling.approach(0=T,1=(f1,f2),2=cv,3=yso,4=user_defined,5=cloudy_test,6=wide,7=AGN,8=logarithmic)   3
